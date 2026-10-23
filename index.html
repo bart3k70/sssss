@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotel</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    
+    <header>
+        <h1>Sklep meblowy</h1>
+        <hr>
+    </header>
+    <main>
+
+        <section>
+            <img src="fotel1.png" alt="Fotel" class="obraz" onclick="Okno()">
+            <img src="fotel1.png" alt="Miniatura" class="miniatury" onclick="Zamien()">
+            <img src="fotel2.png" alt="Miniatura" class="miniatury" onclick="Zamien()">
+            <img src="fotel3.png" alt="Miniatura" class="miniatury" onclick="Zamien()">
+
+            <div class="Okno">
+                <span class="zamknij" onclick="zamknijOkno()">&times;</span>
+                <img  alt="" class="obrazOkno">
+            </div>
+
+        </section>
+
+        <article>
+            <H2>Żółty fotel</H2>
+            <p>Nasz żółty fotel może być przygotowany w trzech wariantach, które można przeglądać na grafikach. Jest wygodny i elegancki. Wariant 1 polecamy do wnętrz klasycznych. Wariant 3 jest utrzymany w stylu glamour, a guzik na środku oparcia jest wykonany z kryształka. Wygodne podłokietniki sprawiają, że w tym fotelu naprawdę się odpoczywa. Wykonany z elastycznej pianki - materiału, który wyróżnia się plastycznością oraz sprężystością, zapewniając komfort siedzenia. </p>
+            <p>Zorganizujemy dla Ciebie bezpłatną dostawę oraz wniesiemy towar.</p>
+            <p><strong>Wybierz wariant fotela</strong></p>
+            <select>
+                <option>wariant 1</option>
+                <option>wariant 2</option>
+                <option>wariant 3</option>
+            </select>
+            <p><button id="przycisk">KUP TERAZ</button></p>
+            <p><a href="sklep.html">Do strony głównej</a></p>
+        </article>
+
+    </main>
+
+    <script>
+        function Zamien(klikalnaminiatura){
+            const obrazGlowny = document.querySelector('.obraz');
+            obrazGlowny.src = klikalnaMiniatura.src;
+            obrazGlowny.alt = klikalnaMiniatura.alt;
+
+             }
+        function Okno(zamienobraz)
+
+
+    </script>
+
+    <footer>
+        <hr>
+        <p>Autor strony:0000000000</p>
+    </footer>
+</body>
+</html>
