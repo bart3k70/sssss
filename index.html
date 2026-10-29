@@ -15,20 +15,23 @@
     <main>
 
         <section>
+            <!-- Kliknięcie obrazu głównego otwiera okno -->
             <img src="fotel1.png" alt="Fotel" class="obraz" onclick="Okno()">
-            <img src="fotel1.png" alt="Miniatura" class="miniatury" onclick="Zamien()">
-            <img src="fotel2.png" alt="Miniatura" class="miniatury" onclick="Zamien()">
-            <img src="fotel3.png" alt="Miniatura" class="miniatury" onclick="Zamien()">
+            
+            <!-- Przekazujemy 'this' do funkcji Zamien -->
+            <img src="fotel1.png" alt="miniatura" class="miniatury" onclick="Zamien(this)">
+            <img src="fotel2.png" alt="miniatura" class="miniatury" onclick="Zamien(this)">
+            <img src="fotel3.png" alt="miniatura" class="miniatury" onclick="Zamien(this)">
 
             <div class="Okno">
                 <span class="zamknij" onclick="zamknijOkno()">&times;</span>
-                <img  alt="" class="obrazOkno">
+                <img alt="" class="obrazOkno">
             </div>
 
         </section>
 
         <article>
-            <H2>Żółty fotel</H2>
+            <h2>Żółty Fotel</h2>
             <p>Nasz żółty fotel może być przygotowany w trzech wariantach, które można przeglądać na grafikach. Jest wygodny i elegancki. Wariant 1 polecamy do wnętrz klasycznych. Wariant 3 jest utrzymany w stylu glamour, a guzik na środku oparcia jest wykonany z kryształka. Wygodne podłokietniki sprawiają, że w tym fotelu naprawdę się odpoczywa. Wykonany z elastycznej pianki - materiału, który wyróżnia się plastycznością oraz sprężystością, zapewniając komfort siedzenia. </p>
             <p>Zorganizujemy dla Ciebie bezpłatną dostawę oraz wniesiemy towar.</p>
             <p><strong>Wybierz wariant fotela</strong></p>
@@ -44,20 +47,36 @@
     </main>
 
     <script>
-        function Zamien(klikalnaminiatura){
+        
+        function Zamien(klikalnaMiniatura) {
             const obrazGlowny = document.querySelector('.obraz');
             obrazGlowny.src = klikalnaMiniatura.src;
             obrazGlowny.alt = klikalnaMiniatura.alt;
+        }
 
-             }
-        function Okno(zamienobraz)
+       
+        function Okno() {
+            const obrazGlowny = document.querySelector('.obraz');
+            const oknoBlok = document.querySelector('.Okno'); 
+            const obrazW1 = document.querySelector('.obrazOkno'); 
 
+            obrazW1.src = obrazGlowny.src;
+            obrazW1.alt = obrazGlowny.alt;
 
+            oknoBlok.style.display = 'block';
+        }
+
+        
+        function zamknijOkno() {
+            const oknoBlok = document.querySelector('.Okno');
+            oknoBlok.style.display = 'none';
+        }
     </script>
 
     <footer>
         <hr>
-        <p>Autor strony:0000000000</p>
+        
+        <p>Autor strony: <i>0000000000</i></p>
     </footer>
 </body>
 </html>
